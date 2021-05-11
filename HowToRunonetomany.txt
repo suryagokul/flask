@@ -1,0 +1,40 @@
+# flask
+creating blog while learning flask.
+
+### commands to run sqlalchemy for onetomany.py file : 
+
+
+           python        # enter into python shell
+        >> from onetomany import db,Person,Books        # from module onetomany importing classes
+        >> db.create_all()
+        >> user1 = Person(name="surya")
+        >> user2 = Person(name="sai")
+        >> user3 = Person(name="krish")
+        >> db.session.add(user1)
+        >> db.session.add(user2)
+        >> db.session.add(user3)
+        >> db.session.commit()
+
+        >> book_1 = Books(book_name="Harry Potter", owner="surya")
+        >> book_2 = Books(book_name="Hands On Python", owner="surya")
+        >> book_3 = Books(book_name="Machine Learning", owner="krish")
+        >> db.session.add(book_1)
+        >> db.session.add(book_2)
+        >> db.session.add(book_3)
+        >> db.session.commit()
+
+
+        >> Person.query.all()                        # for getting all users
+        >> Person.query.first()                      # to get first user
+        >> Person.query.get(2)                       # get second user (based on id)
+        >> Person.query.filter_by(name='surya').all() 
+
+        >> user1.books                 # to know how many books surya owns
+         
+        >> book_1.owner                # returns object of Person
+        >> book_1.owner.name           # book_1 owned by person 
+        >> book_1.owner.id             # book_1 owned by person id
+
+
+       
+
